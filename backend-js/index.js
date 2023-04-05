@@ -3,7 +3,7 @@ import mongodb from "mongodb"
 import Attedance from "./server/attendance.js"
 
 const MongoClient = mongodb.MongoClient
-const uri = "mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.8.0"
+const uri = "mongodb+srv://devakash:S2KKc9cHdiWPGS1X@cluster0.wr2no1s.mongodb.net/"
 
 const port = 2023
 
@@ -21,6 +21,6 @@ MongoClient.connect(
     .then(async client => {
         await Attedance.injectDB(client)
         app.listen(port, () => {
-            console.log("listening on port 8000")
+            console.log(`listening on port ${port}`)
         })
     } )
