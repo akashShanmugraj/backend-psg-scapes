@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use('/api',require('./routes/api'));
 
 //connect to mongodb
-mongoose.connect('mongodb+srv://aknsubbu:aknswithA+@learn-mongodb.pghq5gn.mongodb.net/psg-scapes?retryWrites=true&w=majority');
+mongoose.connect('');
 
 //listening for requests 
 app.listen(process.env.port || 4000,function(){
