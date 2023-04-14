@@ -11,9 +11,10 @@ export default class AuthenticationController{
 
     static async apiGetOneUserbyRollnumber(req, res, next) {
         try {
-            res.json(await authentication.getOneUserbyRollnumber(req.body.rollnum))
+            res.json(await authentication.getOneUserbyRollnumber(req.headers.rollnumber))
         } catch (e) {
             console.error(e)
         }
     }
+    
 }
