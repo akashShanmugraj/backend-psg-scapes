@@ -33,8 +33,9 @@ export default class authentication {
     // ! has error in fetching data
     static async getTutorCode() {
         try {
-            const userdata = await authConnection.db('admin').collection('info').find({})
-            return "1122"
+            const results = await authConnection.db('admin').collection('info').find({})
+            const tutorcode = await results.toArray()
+            return tutorcode[0]['tutorCode']
         } catch (e) {
             console.error(e)
         }
